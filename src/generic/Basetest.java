@@ -8,10 +8,13 @@ import org.testng.annotations.BeforeMethod;
 
 public class Basetest implements Constant {
 	public WebDriver driver;
+	static
+	{
+		System.setProperty(key,value);
+	}
 	@BeforeMethod
 	public void open()
 	{
-			System.setProperty(key,value);
 			 driver=new ChromeDriver();
 			String url1 = Property.getpropertydata(propertyfilepath,"URL");
 			driver.get(url1);
